@@ -1,0 +1,102 @@
+[
+  {
+    "nombre": "Juan",
+    "apellidoPaterno": "González",
+    "apellidoMaterno": "López",
+    "curp": "GOLJ930731HSLPNN09",
+    "colonia": "Las Quintas",
+    "calle": "calle Tamaulipas",
+    "numeroTelefono": "6671234567",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "María",
+    "apellidoPaterno": "Hernández",
+    "apellidoMaterno": "Sánchez",
+    "curp": "HESM950509MSLNRR05",
+    "colonia": "Los Pinos",
+    "calle": "Avenida de los Álamos",
+    "numeroTelefono": "6672345678",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "Carlos",
+    "apellidoPaterno": "Martínez",
+    "apellidoMaterno": "García",
+    "curp": "MAGC880712HSLLRC02",
+    "colonia": "Villa Universidad",
+    "calle": "calle del Tecnológico",
+    "numeroTelefono": "6673456789",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "Ana",
+    "apellidoPaterno": "López",
+    "apellidoMaterno": "Martínez",
+    "curp": "LOMA920301MSNLNN07",
+    "colonia": "Bachigualato",
+    "calle": "Boulevard Emiliano Zapata",
+    "numeroTelefono": "6674567890",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "Pedro",
+    "apellidoPaterno": "Sánchez",
+    "apellidoMaterno": "Hernández",
+    "curp": "SAHP890515HSLNRR06",
+    "colonia": "Montebello",
+    "calle": "calle Palma Real",
+    "numeroTelefono": "6675678901",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "Laura",
+    "apellidoPaterno": "García",
+    "apellidoMaterno": "Pérez",
+    "curp": "GAPL940421MSLRRR02",
+    "colonia": "Las Quintas",
+    "calle": "calle Morelos",
+    "numeroTelefono": "6676789012",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "Luis",
+    "apellidoPaterno": "Hernández",
+    "apellidoMaterno": "Rodríguez",
+    "curp": "HERL960803HSLNZZ03",
+    "colonia": "Las Palmas",
+    "calle": "calle del Álamo",
+    "numeroTelefono": "6677890123",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "Sofía",
+    "apellidoPaterno": "Pérez",
+    "apellidoMaterno": "González",
+    "curp": "PEGG900314MSLNZZ01",
+    "colonia": "Rinconada del Valle",
+    "calle": "calle de la Rosa",
+    "numeroTelefono": "6678901234",
+    "renta": "entregada"
+  },
+  {
+    "nombre": "Diego",
+    "apellidoPaterno": "Martínez",
+    "apellidoMaterno": "Hernández",
+    "curp": "MAHD950619HSLNCC00",
+    "colonia": "Cedros",
+    "calle": "calle del Árbol",
+    "numeroTelefono": "6679012345",
+    "renta": "Recogida"
+  },
+  {
+    "nombre": "Elena",
+    "apellidoPaterno": "González",
+    "apellidoMaterno": "López",
+    "curp": "GOLJ871205MSLNRR08",
+    "colonia": "Las Torres",
+    "calle": "calle del Fresno",
+    "numeroTelefono": "6670123456",
+    "renta": "Recogida"
+  }
+]
