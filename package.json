@@ -1,0 +1,17 @@
+{
+  "name": "rest-api-tamazula",
+  "version": "1.0.0",
+  "description": "APITamazula - Para Uso de Electrodomesticos Tamazula",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Armando Rosales",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.18.3",
+    "zod": "3.22.4"
+  }
+}
