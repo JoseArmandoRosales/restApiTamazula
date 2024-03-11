@@ -4,7 +4,7 @@
   "description": "APITamazula - Para Uso de Electrodomesticos Tamazula",
   "main": "api.js",
   "scripts": {
-    "start": "node app.js",
+    "build": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Armando Rosales",
