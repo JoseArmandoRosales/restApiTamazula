@@ -2,7 +2,7 @@
   "name": "rest-api-tamazula",
   "version": "1.0.0",
   "description": "APITamazula - Para Uso de Electrodomesticos Tamazula",
-  "main": "api.js",
+  "main": "app.js",
   "scripts": {
     "build": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
