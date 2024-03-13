@@ -2,17 +2,17 @@
 
 const express = require("express")
 const cors = require("cors")
-const {fechaEntrega, fechaRecoger} = require("./functions/date")
 
 
 const clientes = require('./clientes.json')
+const {fechaEntrega, fechaRecoger} = require("./functions/date")
 const { validateCliente, validatePartialCliente } = require("./schemas/clientesSchema")
 
 
 const app = express()
+app.use(express.json())
 app.use(cors())
 app.disable('x-powered-by')
-app.use(express.json())
 
 
 ////////////////////////////////////////////////////////////////////////
@@ -95,5 +95,5 @@ app.delete('/clientes/:numeroTelefono', (req, res) => {
 const PORT = process.env.PORT ?? 1234
 
 app.listen(PORT, () => {
-    console.log(`Server on port: ${PORT}`)
+    console.log(`Server escucha en port: ${PORT}`)
 })
