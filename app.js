@@ -14,7 +14,6 @@ app.use(cors())
 app.disable('x-powered-by')
 app.use(express.json())
 
-const PORT = process.env.PORT ?? 1234
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -93,6 +92,7 @@ app.delete('/clientes/:numeroTelefono', (req, res) => {
     return res.json({ message: 'Cliente deleted' })
 })
 
+const PORT = process.env.PORT ?? 1234
 
 app.listen(PORT, () => {
     console.log(`Server on port: ${PORT}`)
