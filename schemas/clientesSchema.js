@@ -1,4 +1,4 @@
-const z = require('zod')
+import z from 'zod'
 
 const clienteSchema = z.object({
     nombre: z.string(),
@@ -11,12 +11,11 @@ const clienteSchema = z.object({
     renta: z.string()
 })
 
-function validateCliente (input){
+export function validateCliente (input){
     return clienteSchema.safeParse(input)
 }
 
-function validatePartialCliente (input){
+export function validatePartialCliente (input){
     return clienteSchema.partial().safeParse(input)
 }
 
-module.exports = {validateCliente, validatePartialCliente}
