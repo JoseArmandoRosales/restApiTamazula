@@ -1,5 +1,5 @@
-import clientes from '../clientes.json' assert {type: 'json'}
-import { fechaEntrega, fechaRecoger } from "../functions/date.js"
+import clientes from '../../clientes.json' assert {type: 'json'}
+import { fechaEntrega, fechaRecoger } from "../../functions/date.js"
 
 export class ClienteModelo {
     static async getAll({ renta }) {

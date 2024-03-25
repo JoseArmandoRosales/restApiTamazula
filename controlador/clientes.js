@@ -1,4 +1,5 @@
-import { ClienteModelo } from '../modelo/clientes.js';
+// import { ClienteModelo } from '../modelo/local-file/clientes.js';
+import { ClienteModelo } from '../modelo/postgress/clientes.js';
 import { validateCliente, validatePartialCliente } from "../schemas/clientesSchema.js"
 
 export class ClienteControlador {
