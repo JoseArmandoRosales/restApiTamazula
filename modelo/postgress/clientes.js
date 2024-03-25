@@ -17,8 +17,8 @@ await client.connect()
 
 export class ClienteModelo {
     static async getAll({ renta }) {
-        const [query] = cliente.query('SELECT * FROM public.clientes ORDER BY id ASC LIMIT 100');
-        return query
+        const query = await client.query('SELECT * FROM clientes ORDER BY id ASC LIMIT 100');
+        return query.rows
     }
 
     static async getByNumTel({ numeroTelefono }) {
