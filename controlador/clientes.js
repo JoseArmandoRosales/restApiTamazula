@@ -1,13 +1,16 @@
 // import { ClienteModelo } from '../modelo/local-file/clientes.js';
 import { ClienteModelo } from '../modelo/postgress/clientes.js';
-import { validateCliente, validatePartialCliente } from "../schemas/clientesSchema.js"
+import { validateCliente } from "../schemas/clientesSchema.js"
+import { idClienteSchema } from '../schemas/idClienteSchema.js';
+
+import {datosfaltantes} from '../functions/detectarDatosFaltantes.js'
+import {validarObjetoEsVacio} from '../functions/validarObjetoNoVacio.js';
+
 
 export class ClienteControlador {
 
     static async getAll(req, res) {
-        const { renta } = req.query
-        const clientes = await ClienteModelo.getAll({ renta })
-
+        const clientes = await ClienteModelo.getAll()
         res.json(clientes)
     }
 
@@ -19,32 +22,71 @@ export class ClienteControlador {
         res.status(404).json({ message: 'Not encontrado' })
     }
 
+    static async getById(req, res){
+        if(isNaN(parseInt(req.params.id)) ){
+            return res.json({ message: 'Not a Number Detected' })
+        }
+        req.params.id = parseInt(req.params.id)
+
+        const id = idClienteSchema(req.params)
+        if (id.error) {
+            return res.status(400).json({ error: JSON.parse(id.error.message) })
+        }
+
+        const cliente = await ClienteModelo.getById({id: id.data})
+        
+        if (cliente && cliente.length > 0) return res.json(cliente)
+        res.status(404).json({ message: 'Not encontrado' })
+    }
+
     static async createCliente(req, res) {
         const result = validateCliente(req.body)
         if (result.error) {
             return res.status(400).json({ error: JSON.parse(result.error.message) })
         }
 
-        const newCliente = await ClienteModelo.createCliente({ input: result.data })
+        const completeData = datosfaltantes(result.data)
+        if ( validarObjetoEsVacio(completeData) ){
+            return res.status(400).json({ error: 'No Data Sended' })
+        }
+
+        const newCliente = await ClienteModelo.createCliente({ input: completeData })
         res.status(201).json(newCliente)
     }
 
     static async patchCliente(req, res){
-        const result = validatePartialCliente(req.body)
+        if(isNaN(parseInt(req.params.id)) ){
+            return res.json({ message: 'Not a Number Detected' })
+        }
+        req.params.id = parseInt(req.params.id)
+
+        const id = idClienteSchema(req.params)
+        if (id.error) {
+            return res.status(400).json({ error: JSON.parse(id.error.message) })
+        }
+
+        const result = validateCliente(req.body)
         if (!result.success) return res.status(400).json({ error: JSON.parse(result.error.message) })
     
-        const { numeroTelefono } = req.params
-        const resultPatch = await ClienteModelo.patchCliente({numeroTelefono, input: result.data})
+        const resultPatch = await ClienteModelo.patchCliente({id: id.data, input: result.data})
         if(resultPatch === false) return res.status(404).json({message: 'Cliente not found'})
     
         return res.json(resultPatch)
     }
 
     static async deleteCliente (req, res) {
-        const { numeroTelefono } = req.params
-        const result =  await ClienteModelo.deleteCliente({numeroTelefono})
+        if(isNaN(parseInt(req.params.id)) ){
+            return res.json({ message: 'Not a Number Detected' })
+        }
+        req.params.id = parseInt(req.params.id)
+
+        const validation = idClienteSchema(req.params)
+        if (validation.error) {
+            return res.status(400).json({ error: JSON.parse(validation.error.message) })
+        }
+        
+        const result =  await ClienteModelo.deleteCliente({id :validation.data})
         if (!result) return res.status(404).json({ message: 'Cliente not found' })
-    
         return res.json({ message: 'Cliente deleted' })
     }
 }
