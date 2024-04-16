@@ -2,7 +2,7 @@
 node_modules
 
 #Ignorar el test de la API
-test.http
+test clientes.http
 
 # #Ignorar el json de ejemplo de cliente
 # clientes.json
