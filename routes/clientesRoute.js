@@ -4,8 +4,15 @@ import {ClienteControlador} from '../controlador/clientes.js';
 
 export const clientesRouter = Router()
 
+// Get de todos los /clientes y con query por estatus
 clientesRouter.get('/', ClienteControlador.getAll)
-clientesRouter.get('/:numeroTelefono', ClienteControlador.getByNumTel)
+// Get de Cliente por id
+clientesRouter.get('/:id',ClienteControlador.getById)
+// Get de /clientes/"NumeroTel"
+clientesRouter.get('/telefono/:numeroTelefono', ClienteControlador.getByNumTel)
+// Post a /clientes
 clientesRouter.post('/',  ClienteControlador.createCliente)
-clientesRouter.patch('/:numeroTelefono', ClienteControlador.patchCliente)
-clientesRouter.delete('/:numeroTelefono', ClienteControlador.deleteCliente)  
+// Patch a /clientes/"NumTel"
+clientesRouter.patch('/:id', ClienteControlador.patchCliente)
+// Delete a Clientes/"id"
+clientesRouter.delete('/:id', ClienteControlador.deleteCliente)
