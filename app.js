@@ -2,8 +2,14 @@
 
 import express, { json } from "express"
 import cors from 'cors'
-import {clientesRouter} from './routes/clientesRoute.js'
 import {landingRouter} from './routes/landingRoute.js'
+import {clientesRouter} from './routes/clientesRoute.js'
+import {rentasRouter} from './routes/rentasRoute.js'
+import dotenv from 'dotenv';
+
+////////////////////////////////////////////////////////////////////////
+
+dotenv.config();
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -20,6 +26,9 @@ app.get('/', landingRouter)
 
 // Ruta Clientes
 app.use('/clientes', clientesRouter)
+
+// Ruta Rentas
+app.use('/rentas', rentasRouter)
 
 
 const PORT = process.env.PORT ?? 1234
