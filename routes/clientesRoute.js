@@ -1,7 +1,6 @@
 import { Router } from 'express'
 import {ClienteControlador} from '../controlador/clientes.js';
 
-
 export const clientesRouter = Router()
 
 // Get de todos los /clientes y con query por estatus
