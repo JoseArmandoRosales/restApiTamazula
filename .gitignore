@@ -1,12 +1,11 @@
 # Ignorar los node modules
 node_modules
 
-#Ignorar el test de la API
+#Ignorar el test de la API - EndPoitns Clientes
 test clientes.http
 
-# #Ignorar el json de ejemplo de cliente
-# clientes.json
+# #Ignorar el test de la API - EndPoitns Rentas
+test rentas.http
+
+#Workspace VSC
 Despliegue.code-workspace
-
-
-
