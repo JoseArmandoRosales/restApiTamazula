@@ -1,13 +1,15 @@
 import pg from 'pg'
+import dotenv from 'dotenv';
+dotenv.config();
 
 const DB_CONFIG = {
-    host: 'ep-misty-wildflower-a15bcnfp.ap-southeast-1.aws.neon.fl0.io',
-    port: 5432,
-    database: 'tamazulaDB',
-    user: 'fl0user',
-    password: 'nDG7lFTsHhL0',
+    host: process.env.PGHOST,
+    port: process.env.PGPORT,
+    database: process.env.PGDATABASE,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
     ssl: true
-}
+};
 
 const pool = new pg.Pool(DB_CONFIG)
 
