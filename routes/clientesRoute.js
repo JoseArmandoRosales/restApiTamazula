@@ -15,3 +15,6 @@ clientesRouter.post('/',  ClienteControlador.createCliente)
 clientesRouter.patch('/:id', ClienteControlador.patchCliente)
 // Delete a Clientes/"id"
 clientesRouter.delete('/:id', ClienteControlador.deleteCliente)
+
+//POST para hacer un GET de consulta especifica
+clientesRouter.post('/consultas', ClienteControlador.consultas)
