@@ -108,9 +108,9 @@ export class ClienteControlador {
       return res.status(400).json({ error: "No Data Sended" });
     }
 
-    // const resultPatch = await ClienteModelo.patchCliente({id: id.data, input: result.data})
+    const resultPatch = await ClienteModelo.consultas({input: completeData})
     // if(resultPatch === false) return res.status(404).json({message: 'Cliente not found'})
 
-    return res.json(completeData);
+    return res.json(resultPatch);  
   }
 }

@@ -18,6 +18,7 @@ const getQueryById = 'SELECT * FROM get_by_id($1);';
 const postNewCliente = 'SELECT new_cliente($1, $2, $3, $4, $5, $6, $7) AS id;';
 const updateQuery = 'SELECT * FROM update_cliente($1, $2, $3, $4, $5, $6, $7, $8);';
 const deleteCliente = 'SELECT delete_cliente($1);';
+const consulta1 = 'SELECT * FROM buscar_nombres($1)';
 
 export class ClienteModelo {
     static async getAll() {
@@ -101,6 +102,22 @@ export class ClienteModelo {
         } finally {
             client.release();
         }
+    }
+
+    static async consultas({input}){
+
+        const client = await pool.connect();
+        try {
+            const query = await client.query(consulta1, [Object.values(input)[0]] );
+            console.log(input)
+            console.log([Object.values(input)[0]])
+            return query.rows;
+        } finally {
+            client.release();
+        }
+
+        
+        // return input
     }
 }
 
